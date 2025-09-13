@@ -1,3 +1,4 @@
+
 namespace SchoolManager.Models.Db;
 
 /**
@@ -14,4 +15,6 @@ public class Class
     public int MaxAmountOfPupils { get; set; }
 
     public int AmountOfPupils { get; set; }
+
+    public Class Copy() => (Class)MemberwiseClone();
 }

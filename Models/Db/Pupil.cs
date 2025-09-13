@@ -12,4 +12,6 @@ public class Pupil
     public string? ClassName { get; set; }
 
     public int? FollowUpNumber { get; set; }
+
+    public Pupil Copy() => (Pupil)MemberwiseClone();
 }
