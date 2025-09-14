@@ -14,149 +14,149 @@ public class PupilClassManagerTests
     public void Assign_New_Pupils_To_Classes()
     {
         // Arrange
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>() {
-                new Pupil() {
+            Pupils = [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Portauw Pieter"
                 },
-                new Pupil() {
+                new() {
                     Id = 3,
                     Name = "Maekelbergh Thibault",
                 },
-                new Pupil() {
+                new() {
                     Id = 4,
                     Name = "Petrescu Adrian-Mihai"
                 },
-                new Pupil() {
+                new() {
                     Id = 5,
                     Name = "De Vos Andres"
                 },
-                new Pupil() {
+                new() {
                     Id = 6,
                     Name = "Demaecker Caro",
                 },
-                new Pupil() {
+                new() {
                     Id = 7,
                     Name = "Goderis Jonas"
                 },
-                new Pupil() {
+                new() {
                     Id = 8,
                     Name = "Huyghe Lowie"
                 },
-                new Pupil () {
+                new() {
                     Id = 9,
                     Name = "Cornille Lukas"
                 },
-                new Pupil () {
+                new() {
                     Id = 10,
                     Name = "Nanescu Maria"
                 },
-                new Pupil () {
+                new() {
                     Id = 11,
                     Name = "Lasseel Siem"
                 },
-                new Pupil() {
+                new() {
                     Id = 12,
                     Name = "Spanhove Stijn"
                 },
-                new Pupil() {
+                new() {
                     Id = 13,
                     Name = "Verween Stijn"
                 },
-                new Pupil() {
+                new() {
                     Id = 14,
                     Name = "Dekiere Thomas"
                 },
-                new Pupil() {
+                new() {
                     Id = 15,
                     Name = "Akin Özgür"
                 }
-            },
-            Classes = new List<Class>() {
-                new Class() {
+            ],
+            Classes = [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 5,
                 },
-                new Class() {
+                new() {
                     Id = 2,
                     ClassName = "Second grade",
                     TeacherName = "Mr. Verbist Frank",
                     MaxAmountOfPupils = 20,
                 }
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>() {
-                new Assignment() {
+            Assignments = [
+                new() {
                     PupilId = 1,
                     ClassId = 1
                 },
-                new Assignment() {
+                new() {
                     PupilId = 2,
                     ClassId = 1
                 },
-                new Assignment() {
+                new() {
                     PupilId = 3,
                     ClassId = 1
                 },
-                new Assignment() {
+                new() {
                     PupilId = 4,
                     ClassId = 1
                 },
-                new Assignment() {
+                new() {
                     PupilId = 5,
                     ClassId = 1
                 },
-                new Assignment() {
+                new() {
                     PupilId = 6,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 7,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 8,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 9,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 10,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 11,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 12,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 13,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 14,
                     ClassId = 2
                 },
-                new Assignment() {
+                new() {
                     PupilId = 15,
                     ClassId = 2
                 }
-            }
+            ]
         };
 
         // Act
@@ -164,140 +164,140 @@ public class PupilClassManagerTests
         var diff = PupilClassManager.Diff(initialState, newState);
 
         // Assert
-        State expectedState = new State()
+        State expectedState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 5
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Portauw Pieter",
                     ClassName = "First grade",
                     FollowUpNumber = 4
                 },
-                new Pupil() {
+                new() {
                     Id = 3,
                     Name = "Maekelbergh Thibault",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 4,
                     Name = "Petrescu Adrian-Mihai",
                     ClassName = "First grade",
                     FollowUpNumber = 3
                 },
-                new Pupil() {
+                new() {
                     Id = 5,
                     Name = "De Vos Andres",
                     ClassName = "First grade",
                     FollowUpNumber = 1
                 },
-                new Pupil() {
+                new() {
                     Id = 6,
                     Name = "Demaecker Caro",
                     ClassName = "Second grade",
                     FollowUpNumber = 4
                 },
-                new Pupil() {
+                new() {
                     Id = 7,
                     Name = "Goderis Jonas",
                     ClassName = "Second grade",
                     FollowUpNumber = 5
                 },
-                new Pupil() {
+                new() {
                     Id = 8,
                     Name = "Huyghe Lowie",
                     ClassName = "Second grade",
                     FollowUpNumber = 6
                 },
-                new Pupil() {
+                new() {
                     Id = 9,
                     Name = "Cornille Lukas",
                     ClassName = "Second grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 10,
                     Name = "Nanescu Maria",
                     ClassName = "Second grade",
                     FollowUpNumber = 8
                 },
-                new Pupil() {
+                new() {
                     Id = 11,
                     Name = "Lasseel Siem",
                     ClassName = "Second grade",
                     FollowUpNumber = 7
                 },
-                new Pupil() {
+                new() {
                     Id = 12,
                     Name = "Spanhove Stijn",
                     ClassName = "Second grade",
                     FollowUpNumber = 9
                 },
-                new Pupil() {
+                new() {
                     Id = 13,
                     Name = "Verween Stijn",
                     ClassName = "Second grade",
                     FollowUpNumber = 10
                 },
-                new Pupil() {
+                new() {
                     Id = 14,
                     Name = "Dekiere Thomas",
                     ClassName = "Second grade",
                     FollowUpNumber = 3
                 },
-                new Pupil() {
+                new() {
                     Id = 15,
                     Name = "Akin Özgür",
                     ClassName = "Second grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 5,
                     AmountOfPupils = 5
                 },
-                new Class() {
+                new() {
                     Id = 2,
                     ClassName = "Second grade",
                     TeacherName = "Mr. Verbist Frank",
                     MaxAmountOfPupils = 20,
                     AmountOfPupils = 10
                 }
-            }
+            ]
         };
         var expectedDiff = (
             new List<UpdatedPupil> {
-                new UpdatedPupil() { PupilId = 1, ClassName = "First grade", FollowUpNumber = 5 },
-                new UpdatedPupil() { PupilId = 2, ClassName = "First grade", FollowUpNumber = 4 },
-                new UpdatedPupil() { PupilId = 3, ClassName = "First grade", FollowUpNumber = 2 },
-                new UpdatedPupil() { PupilId = 4, ClassName = "First grade", FollowUpNumber = 3 },
-                new UpdatedPupil() { PupilId = 5, ClassName = "First grade", FollowUpNumber = 1 },
-                new UpdatedPupil() { PupilId = 6, ClassName = "Second grade", FollowUpNumber = 4 },
-                new UpdatedPupil() { PupilId = 7, ClassName = "Second grade", FollowUpNumber = 5 },
-                new UpdatedPupil() { PupilId = 8, ClassName = "Second grade", FollowUpNumber = 6 },
-                new UpdatedPupil() { PupilId = 9, ClassName = "Second grade", FollowUpNumber = 2 },
-                new UpdatedPupil() { PupilId = 10, ClassName = "Second grade", FollowUpNumber = 8 },
-                new UpdatedPupil() { PupilId = 11, ClassName = "Second grade", FollowUpNumber = 7 },
-                new UpdatedPupil() { PupilId = 12, ClassName = "Second grade", FollowUpNumber = 9 },
-                new UpdatedPupil() { PupilId = 13, ClassName = "Second grade", FollowUpNumber = 10 },
-                new UpdatedPupil() { PupilId = 14, ClassName = "Second grade", FollowUpNumber = 3 },
-                new UpdatedPupil() { PupilId = 15, ClassName = "Second grade", FollowUpNumber = 1 }
+                new() { PupilId = 1, ClassName = "First grade", FollowUpNumber = 5 },
+                new() { PupilId = 2, ClassName = "First grade", FollowUpNumber = 4 },
+                new() { PupilId = 3, ClassName = "First grade", FollowUpNumber = 2 },
+                new() { PupilId = 4, ClassName = "First grade", FollowUpNumber = 3 },
+                new() { PupilId = 5, ClassName = "First grade", FollowUpNumber = 1 },
+                new() { PupilId = 6, ClassName = "Second grade", FollowUpNumber = 4 },
+                new() { PupilId = 7, ClassName = "Second grade", FollowUpNumber = 5 },
+                new() { PupilId = 8, ClassName = "Second grade", FollowUpNumber = 6 },
+                new() { PupilId = 9, ClassName = "Second grade", FollowUpNumber = 2 },
+                new() { PupilId = 10, ClassName = "Second grade", FollowUpNumber = 8 },
+                new() { PupilId = 11, ClassName = "Second grade", FollowUpNumber = 7 },
+                new() { PupilId = 12, ClassName = "Second grade", FollowUpNumber = 9 },
+                new() { PupilId = 13, ClassName = "Second grade", FollowUpNumber = 10 },
+                new() { PupilId = 14, ClassName = "Second grade", FollowUpNumber = 3 },
+                new() { PupilId = 15, ClassName = "Second grade", FollowUpNumber = 1 }
             },
             new List<UpdatedClass> {
-                new UpdatedClass() { ClassId = 1, AmountOfPupils = 5 },
-                new UpdatedClass() { ClassId = 2, AmountOfPupils = 10 }
+                new() { ClassId = 1, AmountOfPupils = 5 },
+                new() { ClassId = 2, AmountOfPupils = 10 }
             }
         );
 
@@ -313,50 +313,50 @@ public class PupilClassManagerTests
     public void Move_Some_Pupils_From_One_Class_To_Another()
     {
         // Arrange
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "First grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 2
                 },
-                new Class() {
+                new() {
                     Id = 2,
                     ClassName = "Second grade",
                     TeacherName = "Mr. Verbist Frank",
                     MaxAmountOfPupils = 1,
                     AmountOfPupils = 0
                 }
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>()
-            {
-                new Assignment() {
+            Assignments =
+            [
+                new() {
                     PupilId = 1,
                     ClassId = 2
                 }
-            }
+            ]
         };
 
         // Act
@@ -364,26 +364,26 @@ public class PupilClassManagerTests
         var diff = PupilClassManager.Diff(initialState, newState);
 
         // Assert
-        State expectedState = new State()
+        State expectedState = new()
         {
-            Pupils = new List<Pupil>() {
-                new Pupil()
+            Pupils = [
+                new()
                 {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "Second grade",
                     FollowUpNumber = 1
                 },
-                new Pupil()
+                new()
                 {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "First grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>() {
-                new Class()
+            ],
+            Classes = [
+                new()
                 {
                     Id = 1,
                     ClassName = "First grade",
@@ -392,7 +392,7 @@ public class PupilClassManagerTests
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 1
                 },
-                new Class()
+                new()
                 {
                     Id = 2,
                     ClassName = "Second grade",
@@ -400,15 +400,15 @@ public class PupilClassManagerTests
                     MaxAmountOfPupils = 1,
                     AmountOfPupils = 1
                 }
-            }
+            ]
         };
         var expectedDiff = (
             new List<UpdatedPupil> {
-                new UpdatedPupil() { PupilId = 1, ClassName = "Second grade", FollowUpNumber = 1 }
+                new() { PupilId = 1, ClassName = "Second grade", FollowUpNumber = 1 }
             },
             new List<UpdatedClass> {
-                new UpdatedClass() { ClassId = 1, AmountOfPupils = 1 },
-                new UpdatedClass() { ClassId = 2, AmountOfPupils = 1 }
+                new() { ClassId = 1, AmountOfPupils = 1 },
+                new() { ClassId = 2, AmountOfPupils = 1 }
             }
         );
 
@@ -423,43 +423,43 @@ public class PupilClassManagerTests
     [Fact]
     public void Assigning_Pupil_To_A_Non_Existing_Class_Should_Fail()
     {
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "First grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 2
                 },
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>()
-            {
-                new Assignment() {
+            Assignments =
+            [
+                new() {
                     PupilId = 1,
                     ClassId = 2 // This class does not exist
                 }
-            }
+            ]
         };
 
         // Act & Assert
@@ -470,43 +470,43 @@ public class PupilClassManagerTests
     [Fact]
     public void Assigning_Non_Existing_Pupil_To_A_Class_Should_Fail()
     {
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "First grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 3
                 },
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>()
-            {
-                new Assignment() {
+            Assignments =
+            [
+                new() {
                     PupilId = 3,// This pupil does not exist
                     ClassId = 1
                 }
-            }
+            ]
         };
 
         // Act & Assert
@@ -517,54 +517,54 @@ public class PupilClassManagerTests
     [Fact]
     public void Assigning_The_Same_Pupil_To_Multiple_Classes_Should_Fail()
     {
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "First grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 2
                 },
-                new Class() {
+                new() {
                     Id = 2,
                     ClassName = "Second grade",
                     TeacherName = "Mr. Verbist Frank",
                     MaxAmountOfPupils = 1,
                     AmountOfPupils = 0
                 }
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>()
-            {
-                new Assignment() {
+            Assignments =
+            [
+                new() {
                     PupilId = 1,
                     ClassId = 1
                 },
-                new Assignment() {
+                new() {
                     PupilId = 1,
                     ClassId = 2
                 }
-            }
+            ]
         };
 
         // Act & Assert
@@ -575,50 +575,50 @@ public class PupilClassManagerTests
     [Fact]
     public void When_A_Pupil_Is_Not_Assigned_To_A_Class_It_Should_Fail()
     {
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "", // This pupil is not assigned to a class
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 2
                 },
-                new Class() {
+                new() {
                     Id = 2,
                     ClassName = "Second grade",
                     TeacherName = "Mr. Verbist Frank",
                     MaxAmountOfPupils = 1,
                     AmountOfPupils = 0
                 }
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>()
-            {
-                new Assignment() {
+            Assignments =
+            [
+                new() {
                     PupilId = 1,
                     ClassId = 1
                 },
-            }
+            ]
         };
 
         // Act & Assert
@@ -629,50 +629,50 @@ public class PupilClassManagerTests
     [Fact]
     public void When_The_Amount_Of_Pupils_In_A_Class_Exceeds_The_Maximum_Amount_It_Should_Fail()
     {
-        State initialState = new State()
+        State initialState = new()
         {
-            Pupils = new List<Pupil>()
-            {
-                new Pupil() {
+            Pupils =
+            [
+                new() {
                     Id = 1,
                     Name = "Vermaercke Tim",
                     ClassName = "First grade",
                     FollowUpNumber = 2
                 },
-                new Pupil() {
+                new() {
                     Id = 2,
                     Name = "Goderis Jonas",
                     ClassName = "Second grade",
                     FollowUpNumber = 1
                 }
-            },
-            Classes = new List<Class>()
-            {
-                new Class() {
+            ],
+            Classes =
+            [
+                new() {
                     Id = 1,
                     ClassName = "First grade",
                     TeacherName = "Mr. Lemaire Jeroen",
                     MaxAmountOfPupils = 1,
                     AmountOfPupils = 1
                 },
-                new Class() {
+                new() {
                     Id = 2,
                     ClassName = "Second grade",
                     TeacherName = "Mr. Verbist Frank",
                     MaxAmountOfPupils = 2,
                     AmountOfPupils = 0
                 }
-            }
+            ]
         };
-        Request incomingRequest = new Request()
+        Request incomingRequest = new()
         {
-            Assignments = new List<Assignment>()
-            {
-                new Assignment() {
+            Assignments =
+            [
+                new() {
                     PupilId = 2,
                     ClassId = 1
                 },
-            }
+            ]
         };
 
         // Act & Assert
