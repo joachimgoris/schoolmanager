@@ -73,8 +73,8 @@ What we request from you is;
 
 - [x] Add the required implementation in the `./Services/PupilClassManager.cs` to make the unit tests that are defined in `./Tests/PupilClassManagerTests.cs` pass.
 - [x] Use git and commit your changes, preferably in a Merge or Pull Request.
-- [ ] Make sure to document your code as much as possible.
-- [ ] **Bonus**: Provide of a (theoretical) way to achieve data consistency, when something for example might fail.
+- [x] Make sure to document your code as much as possible.
+- [x] **Bonus**: Provide of a (theoretical) way to achieve data consistency, when something for example might fail.
 - [ ] **Bonus**: Run your tests automatically on Pull Request
 - [ ] **Bonus**: Convert the current application to a RestFUL API with 2 endpoints: `GET /state` and `PATCH /state`
 

@@ -11,6 +11,21 @@ namespace SchoolManager.Services;
  */
 public static class PupilClassManager
 {
+    /// <summary>
+    /// Updates the class assignments for pupils based on the specified assignment requests.
+    /// </summary>
+    /// <remarks>The method creates a shallow copy of the provided state and applies all assignment operations
+    /// atomically. The original state is not modified.
+    /// After assignments, pupils in each class are assigned follow-up numbers in alphabetical order by name.
+    /// Since the original state remains unchanged, if data consistency is at risk, the method will write no data to its data store.
+    /// For additional safety we could add write to the data via a transaction but this is out of scope.
+    /// </remarks>
+    /// <param name="state">The current state containing the lists of classes and pupils to be updated. This object is not modified.</param>
+    /// <param name="request">The request containing the collection of pupil-to-class assignment operations to apply.</param>
+    /// <returns>A new <see cref="State"/> instance reflecting the updated class assignments and follow-up numbers for pupils.</returns>
+    /// <exception cref="Exception">Thrown if a specified pupil or class does not exist, if a pupil is assigned to multiple classes, if a class
+    /// exceeds its maximum capacity, or if any pupil remains unassigned after processing.
+    /// </exception>
     public static State UpdatePupilClassDivision(State state, Request request)
     {
         // Create a shallow copy of the state to avoid modifying the original state
