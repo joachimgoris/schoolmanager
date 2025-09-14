@@ -75,8 +75,8 @@ What we request from you is;
 - [x] Use git and commit your changes, preferably in a Merge or Pull Request.
 - [x] Make sure to document your code as much as possible.
 - [x] **Bonus**: Provide of a (theoretical) way to achieve data consistency, when something for example might fail.
-- [ ] **Bonus**: Run your tests automatically on Pull Request
-- [ ] **Bonus**: Convert the current application to a RestFUL API with 2 endpoints: `GET /state` and `PATCH /state`
+- [x] **Bonus**: Run your tests automatically on Pull Request
+- [x] **Bonus**: Convert the current application to a RestFUL API with 2 endpoints: `GET /state` and `PATCH /state`
 
 If you find the time, you're of course welcome to optimize the existing codebase.
 
